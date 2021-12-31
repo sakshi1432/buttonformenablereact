@@ -1,0 +1,41 @@
+import React,{useState,useEffect} from "react";
+import "./Boo.css";
+
+const App = () =>{
+
+  const [name,setName] = useState("");
+  const [surname,setSurname] = useState("");
+  const [butt,setButt] = useState(true);
+
+  useEffect( ()=> {
+        const d = ()=>{
+            console.log(`hellow`);
+            
+            if(name !== " " && surname !== " ")
+              {
+                setButt(false);
+              }
+            
+        }
+        d();
+  },[])
+
+  return(
+    <>
+        <h3>heloow sakshi</h3>
+        <form>
+          <h3>Name</h3>
+           <input type ="text" placeholder = "enter name"
+           value = {name} onChange = {(e) => setName(e.target.value)} ></input>
+           <h3>surname</h3>
+           <input type = "text" placeholder ="enter surname"
+           value = {surname} onChange = {(e) => setSurname(e.target.value)}></input>
+         </form>
+           <button disabled = {butt}>CLIKE ME</button>
+        
+    
+    </>
+  )
+}
+
+export default App;
